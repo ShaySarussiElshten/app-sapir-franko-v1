@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  react-app:
+    image: shay88/react-repo:v1
+    ports:
+      - "3000:3000"
+    depends_on:
+      - node-app
+
+  node-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
